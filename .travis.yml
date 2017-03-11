@@ -7,7 +7,6 @@ php:
 
 install:
   # Install dependencies
-  - apt-get install php-xdebug -y -qq
   - composer self-update
   - if php -v | grep 'HipHop'; then composer update; fi
   - composer install
