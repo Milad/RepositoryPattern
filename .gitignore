@@ -9,3 +9,6 @@
 
 # Composer
 vendor
+
+# Coverage reports
+/build/logs/

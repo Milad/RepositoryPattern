@@ -6,7 +6,7 @@ sudo apt-get install -y -qq curl wget nano  git unzip
 
 # Install PHP
 echo "Installing PHP 7"
-sudo apt-get install -y -qq php php-mcrypt php-mbstring php-mysql php-xml php-zip php-cli php-mbstring php-xdebug
+sudo apt-get install -y -qq php php-mcrypt php-mbstring php-mysql php-xml php-zip php-cli php-mbstring php-xdebug php-curl
 
 # Install composer
 # https://www.digitalocean.com/community/tutorials/how-to-install-and-use-composer-on-ubuntu-16-04
