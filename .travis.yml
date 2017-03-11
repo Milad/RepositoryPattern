@@ -29,3 +29,7 @@ script:
 
 after_success:
   - vendor/bin/test-reporter
+
+matrix:
+  allow_failures:
+  - php: nightly
