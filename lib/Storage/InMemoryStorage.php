@@ -1,8 +1,8 @@
 <?php
 
-namespace RepositoryPattern;
+namespace RepositoryPattern\Storage;
 
-class InMemoryPersistence implements Persistence
+class InMemoryStorage implements StorageInterface
 {
     private $safe = array();
 

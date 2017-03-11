@@ -1,17 +1,23 @@
 <?php
 
-namespace RepositoryPattern;
+namespace RepositoryPattern\Repositories;
+
+use RepositoryPattern\Factories\UserFactory;
+use RepositoryPattern\Entities\UserEntity;
+use RepositoryPattern\Storage\InMemoryStorage;
+use RepositoryPattern\Storage\StorageInterface;
 
 class UserRepository
 {
     private $persistence;
+    private $userFactory;
 
-    public function __construct(Persistence $persistence = null)
+    public function __construct(StorageInterface $persistence = null)
     {
-        $this->persistence = $persistence ? : new InMemoryPersistence();
+        $this->persistence = $persistence ? : new InMemoryStorage();
     }
 
-    public function add(User $user)
+    public function add(UserEntity $user)
     {
         $this->persistence->persist(array(
             $user->getName(),

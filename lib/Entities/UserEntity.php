@@ -1,8 +1,8 @@
 <?php
 
-namespace RepositoryPattern;
+namespace RepositoryPattern\Entities;
 
-class User
+class UserEntity
 {
     private $name;
     private $email;

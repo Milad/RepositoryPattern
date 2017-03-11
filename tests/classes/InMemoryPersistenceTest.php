@@ -3,16 +3,16 @@
 namespace RepositoryPattern\Tests;
 
 use PHPUnit\Framework\TestCase;
-use RepositoryPattern\InMemoryPersistence;
+use RepositoryPattern\Storage\InMemoryStorage;
 
-class InMemoryPersistenceTest extends TestCase
+class InMemoryStorageTest extends TestCase
 {
     public function testAUserHasAllItsComposingParts()
     {
         $data1 = array('data1');
         $data2 = array('data2');
 
-        $persistence = new InMemoryPersistence();
+        $persistence = new InMemoryStorage();
         $persistence->persist($data1);
         $persistence->persist($data2);
 

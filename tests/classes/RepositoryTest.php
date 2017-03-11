@@ -4,9 +4,9 @@ namespace RepositoryPattern\Tests;
 
 use PHPUnit\Framework\TestCase;
 use Mockery;
-use RepositoryPattern\InMemoryPersistence;
-use RepositoryPattern\UserFactory;
-use RepositoryPattern\UserRepository;
+use RepositoryPattern\Storage\InMemoryStorage;
+use RepositoryPattern\Factories\UserFactory;
+use RepositoryPattern\Repositories\UserRepository;
 
 class RepositoryTest extends TestCase
 {
@@ -22,7 +22,7 @@ class RepositoryTest extends TestCase
 
     public function testMemoryItCallsThePersistenceWhenAddingAUser()
     {
-        $persistenceGateway = new InMemoryPersistence();
+        $persistenceGateway = new InMemoryStorage();
         $userRepository = new UserRepository($persistenceGateway);
 
         $name = "Brown Smith";
@@ -35,7 +35,7 @@ class RepositoryTest extends TestCase
         $this->assertEquals($userData, $persistenceGateway->retrieve(0));
     }
 
-    public function testItCanFindAllComments()
+    public function testItCanFindAllUsers()
     {
         $repository = new UserRepository();
 

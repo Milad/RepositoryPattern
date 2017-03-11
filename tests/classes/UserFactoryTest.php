@@ -3,7 +3,7 @@
 namespace RepositoryPattern\Tests;
 
 use PHPUnit\Framework\TestCase;
-use RepositoryPattern\UserFactory;
+use RepositoryPattern\Factories\UserFactory;
 
 class UserFactoryTest extends TestCase
 {
