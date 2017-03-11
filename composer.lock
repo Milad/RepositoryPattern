@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "23a3bb1b2e927d101bf00e42c7e7b1bf",
+    "content-hash": "bad2736624e1ec6db9f99499ed7dcd91",
     "packages": [
         {
             "name": "hamcrest/hamcrest-php",
@@ -1737,7 +1737,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.0.0"
+        "php": ">=7.0"
     },
     "platform-dev": []
 }
