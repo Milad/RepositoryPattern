@@ -16,7 +16,7 @@ class InMemoryStorage implements StorageInterface
         return $this->safe[$ids];
     }
 
-    public function retrieveAll()
+    public function retrieveAll(): array
     {
         return $this->safe;
     }

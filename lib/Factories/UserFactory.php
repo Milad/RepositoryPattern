@@ -11,7 +11,7 @@ class UserFactory implements FactoryInterface
         return $this;
     }
 
-    public function make($data)
+    public function make($data): UserEntity
     {
         return new UserEntity($data[0], $data[1]);
     }

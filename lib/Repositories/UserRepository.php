@@ -25,7 +25,7 @@ class UserRepository
         ));
     }
 
-    public function findAll()
+    public function findAll(): array
     {
         $allUsersData = $this->persistence->retrieveAll();
 

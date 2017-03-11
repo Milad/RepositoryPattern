@@ -6,5 +6,5 @@ interface StorageInterface
 {
     public function persist(array $data);
     public function retrieve($ids);
-    public function retrieveAll();
+    public function retrieveAll(): array;
 }
