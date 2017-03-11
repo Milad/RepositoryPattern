@@ -9,8 +9,8 @@ class UserFactory implements Factory
         return $this;
     }
 
-    public function make(string $name, string $email): User
+    public function make($data): User
     {
-        return new User($name, $email);
+        return new User($data[0], $data[1]);
     }
 }

@@ -15,4 +15,9 @@ class InMemoryPersistence implements Persistence
     {
         return $this->safe[$ids];
     }
+
+    public function retrieveAll()
+    {
+        return $this->safe;
+    }
 }

@@ -1,4 +1,4 @@
-# Repository Pattern
+# Repository Pattern [![Build Status](https://travis-ci.org/Milad/RepositoryPattern.svg?branch=master)](https://travis-ci.org/Milad/RepositoryPattern)
 
 Test Implementation of Repository Design Pattern in PHP.
 

@@ -18,4 +18,19 @@ class UserRepository
             $user->getEmail()
         ));
     }
+
+    public function findAll()
+    {
+        $allUsersData = $this->persistence->retrieveAll();
+
+        $this->userFactory = new UserFactory();
+
+        $users = array();
+
+        foreach ($allUsersData as $userData) {
+            $users[] = $this->userFactory->make($userData);
+        }
+
+        return $users;
+    }
 }

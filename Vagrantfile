@@ -75,6 +75,6 @@ Vagrant.configure("2") do |config|
   #   apt-get install -y apache2
   # SHELL
 
-  config.vm.provision :shell, path: "provision.sh", run: "always", privileged: false
+  config.vm.provision :shell, path: "build/vagrant.sh", run: "always", privileged: false
 
 end

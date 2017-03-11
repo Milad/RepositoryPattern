@@ -4,5 +4,5 @@ namespace RepositoryPattern;
 
 interface Factory
 {
-    public function make(string $name, string $email): User;
+    public function make($data): User;
 }
