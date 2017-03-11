@@ -9,3 +9,7 @@
 
 # Composer
 vendor
+
+# PHPUnit
+tests/coverage
+tests/coverage.txt

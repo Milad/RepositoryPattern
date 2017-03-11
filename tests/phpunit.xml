@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
-<phpunit bootstrap="../vendor/autoload.php">
+<phpunit bootstrap="../vendor/autoload.php" processIsolation="true"
+         colors="true" stopOnError="false" stopOnFailure="false">
     <testsuites>
         <testsuite name="Test Suite">
             <directory>./classes</directory>
@@ -14,4 +15,7 @@
             <directory suffix=".php">../lib/</directory>
         </whitelist>
     </filter>
+    <logging>
+        <log type="coverage-text" target="php://stdout" />
+    </logging>
 </phpunit>
