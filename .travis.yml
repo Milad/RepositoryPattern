@@ -5,6 +5,10 @@ php:
   - '7.1'
   - nightly
 
+addons:
+  code_climate:
+    repo_token: 033b9eefdbd90ee678be658fd9018f67e2d4c1f33460e23fc78ebc0f500a2b13
+
 install:
   # Install dependencies
   - composer self-update
@@ -22,3 +26,6 @@ script:
   - php vendor/bin/phpcs --standard=build/phpcs.xml lib tests
   # PHP Unit Test
   - php vendor/bin/phpunit --configuration tests/phpunit.xml
+
+after_success:
+  - vendor/bin/test-reporter
