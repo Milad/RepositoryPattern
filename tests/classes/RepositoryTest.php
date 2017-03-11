@@ -3,23 +3,12 @@
 namespace RepositoryPattern\Tests;
 
 use PHPUnit\Framework\TestCase;
-use Mockery;
 use RepositoryPattern\Storage\InMemoryStorage;
 use RepositoryPattern\Factories\UserFactory;
 use RepositoryPattern\Repositories\UserRepository;
 
 class RepositoryTest extends TestCase
 {
-    /**
-     * tear down mockery
-     *
-     * @SuppressWarnings(StaticAccess)
-     */
-    protected function tearDown()
-    {
-        Mockery::close();
-    }
-
     public function testMemoryItCallsThePersistenceWhenAddingAUser()
     {
         $persistenceGateway = new InMemoryStorage();

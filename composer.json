@@ -2,8 +2,7 @@
     "name": "miladm/repositorypattern",
     "description": "A small example of Repository Design Pattern",
     "require": {
-        "php": ">=7.0",
-        "mockery/mockery": "^0.9.9"
+        "php": ">=7.0"
     },
     "require-dev": {
       "phpunit/phpunit": "^6.0",
