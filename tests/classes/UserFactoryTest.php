@@ -10,7 +10,7 @@ class UserFactoryTest extends TestCase
     public function testAUserHasAllItsComposingParts()
     {
         $name = "Brown Smith";
-        $email = "brownsmith@gmail.com";
+        $email = "brownsmith@example.com";
 
         $user = (new UserFactory())->make($name, $email);
 

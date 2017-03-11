@@ -10,6 +10,11 @@ use RepositoryPattern\UserRepository;
 
 class RepositoryTest extends TestCase
 {
+    /**
+     * tear down mockery
+     *
+     * @SuppressWarnings(StaticAccess)
+     */
     protected function tearDown()
     {
         Mockery::close();
@@ -22,7 +27,7 @@ class RepositoryTest extends TestCase
         $userRepository = new UserRepository($persistenceGateway);
 
         $name = "Brown Smith";
-        $email = "brownsmith@gmail.com";
+        $email = "brownsmith@example.com";
         $userData = array($name, $email);
         $user = (new UserFactory())->make($name, $email);
 
@@ -38,7 +43,7 @@ class RepositoryTest extends TestCase
         $userRepository = new UserRepository($persistenceGateway);
 
         $name = "Brown Smith";
-        $email = "brownsmith@gmail.com";
+        $email = "brownsmith@example.com";
         $userData = array($name, $email);
         $user = (new UserFactory())->make($name, $email);
 
