@@ -1,0 +1,24 @@
+language: php
+
+php:
+  - '7.0'
+  - '7.1'
+  - hhvm
+  - nightly
+
+install:
+  # Install dependencies
+  - if php -v | grep 'HipHop'; then composer update; fi
+  - composer install
+
+before_script:
+  # Check php syntax (Lynt)
+  - if find {lib,tests} -name "*.php" ! -path "./vendor/*" -exec php -l {} 2>&1 \; | grep "syntax error, unexpected"; then exit 1; fi
+
+script:
+  # PHP Mess Detector
+  - php vendor/bin/phpmd lib,tests text build/phpmd.xml
+  # PHP Code Sniffer
+  - php vendor/bin/phpcs --standard=build/phpcs.xml lib tests
+  # PHP Unit Test
+  - php vendor/bin/phpunit --configuration tests/phpunit.xml

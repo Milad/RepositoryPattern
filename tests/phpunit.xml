@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<phpunit bootstrap="../vendor/autoload.php">
+    <testsuites>
+        <testsuite name="Test Suite">
+            <directory>./classes</directory>
+        </testsuite>
+    </testsuites>
+    <logging>
+        <log type="coverage-text" target="./coverage.txt"/>
+        <log type="coverage-xml" target="./coverage"/>
+    </logging>
+    <filter>
+        <whitelist addUncoveredFilesFromWhitelist="true" processUncoveredFilesFromWhitelist="true" showOnlySummary="false">
+            <directory suffix=".php">../lib/</directory>
+        </whitelist>
+    </filter>
+</phpunit>
