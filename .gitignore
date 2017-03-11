@@ -1,0 +1,11 @@
+# PhpStorm settings
+.idea
+
+# Vagrant
+.vagrant
+
+# Log files
+*.log
+
+# Composer
+vendor

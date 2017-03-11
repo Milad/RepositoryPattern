@@ -1,0 +1,20 @@
+{
+    "name": "miladm/repositorypattern",
+    "description": "A small example of Repository Design Pattern",
+    "type": "metapackage",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Milad Kawas Cake",
+            "email": "miladkaleh@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.0"
+    },
+    "config": {
+        "preferred-install": {
+            "*": "dist"
+        }
+    }
+}
