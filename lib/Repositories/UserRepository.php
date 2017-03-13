@@ -19,7 +19,7 @@ class UserRepository
 
     public function add(UserEntity $user)
     {
-        $this->persistence->persist(array(
+        return $this->persistence->persist(array(
             $user->getName(),
             $user->getEmail()
         ));

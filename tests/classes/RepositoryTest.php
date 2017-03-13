@@ -20,9 +20,9 @@ class RepositoryTest extends TestCase
         $userData = array($name, $email);
         $user = $userFactory->make($userData);
 
-        $userRepository->add($user);
+        $key = $userRepository->add($user);
 
-        $this->assertEquals($userData, $persistenceGateway->retrieve(0));
+        $this->assertEquals($userData, $persistenceGateway->retrieve($key));
     }
 
     public function testItCanFindAllUsers()

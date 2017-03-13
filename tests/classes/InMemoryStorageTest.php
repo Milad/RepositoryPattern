@@ -13,10 +13,10 @@ class InMemoryStorageTest extends TestCase
         $data2 = array('data2');
 
         $persistence = new InMemoryStorage();
-        $persistence->persist($data1);
-        $persistence->persist($data2);
+        $key1 = $persistence->persist($data1);
+        $key2 = $persistence->persist($data2);
 
-        $this->assertEquals($data1, $persistence->retrieve(0));
-        $this->assertEquals($data2, $persistence->retrieve(1));
+        $this->assertEquals($data1, $persistence->retrieve($key1));
+        $this->assertEquals($data2, $persistence->retrieve($key2));
     }
 }
