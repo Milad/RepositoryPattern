@@ -2,9 +2,8 @@
 
 namespace RepositoryPattern\Repositories;
 
-use RepositoryPattern\Factories\UserFactory;
+use RepositoryPattern\Factories\FactoryInterface;
 use RepositoryPattern\Entities\UserEntity;
-use RepositoryPattern\Storage\InMemoryStorage;
 use RepositoryPattern\Storage\StorageInterface;
 
 class UserRepository
@@ -12,9 +11,10 @@ class UserRepository
     private $persistence;
     private $userFactory;
 
-    public function __construct(StorageInterface $persistence = null)
+    public function __construct(StorageInterface $persistence, FactoryInterface $userFactory)
     {
-        $this->persistence = $persistence ? : new InMemoryStorage();
+        $this->persistence = $persistence;
+        $this->userFactory = $userFactory;
     }
 
     public function add(UserEntity $user)
@@ -28,8 +28,6 @@ class UserRepository
     public function findAll(): array
     {
         $allUsersData = $this->persistence->retrieveAll();
-
-        $this->userFactory = new UserFactory();
 
         $users = array();
 

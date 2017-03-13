@@ -12,7 +12,8 @@ class UserFactoryTest extends TestCase
         $name = "Brown Smith";
         $email = "brownsmith@example.com";
 
-        $user = (new UserFactory())->make(array($name, $email));
+        $userFactory = new UserFactory();
+        $user = $userFactory->make(array($name, $email));
 
         $this->assertEquals($name, $user->getName());
         $this->assertEquals($email, $user->getEmail());

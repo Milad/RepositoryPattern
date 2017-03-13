@@ -12,12 +12,13 @@ class RepositoryTest extends TestCase
     public function testMemoryItCallsThePersistenceWhenAddingAUser()
     {
         $persistenceGateway = new InMemoryStorage();
-        $userRepository = new UserRepository($persistenceGateway);
+        $userFactory = new UserFactory();
+        $userRepository = new UserRepository($persistenceGateway, $userFactory);
 
         $name = "Brown Smith";
         $email = "brownsmith@example.com";
         $userData = array($name, $email);
-        $user = (new UserFactory())->make($userData);
+        $user = $userFactory->make($userData);
 
         $userRepository->add($user);
 
@@ -26,17 +27,19 @@ class RepositoryTest extends TestCase
 
     public function testItCanFindAllUsers()
     {
-        $repository = new UserRepository();
+        $persistenceGateway = new InMemoryStorage();
+        $userFactory = new UserFactory();
+        $repository = new UserRepository($persistenceGateway, $userFactory);
 
         $name = "Brown Smith";
         $email = "brownsmith@example.com";
         $userData1 = array($name, $email);
-        $user1 = (new UserFactory())->make($userData1);
+        $user1 = $userFactory->make($userData1);
 
         $name = "Patricia Smith";
         $email = "patriciasmith@example.com";
         $userData2 = array($name, $email);
-        $user2 = (new UserFactory())->make($userData2);
+        $user2 = $userFactory->make($userData2);
 
         $repository->add($user1);
         $repository->add($user2);
